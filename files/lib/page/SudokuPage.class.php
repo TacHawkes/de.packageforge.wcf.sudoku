@@ -1,18 +1,13 @@
 <?php
 namespace wcf\page;
 use wcf\data\sudoku\SudokuGridGenerator;
-
 use wcf\data\sudoku\SudokuGrid;
-
 use wcf\data\sudoku\SudokuGridSolver;
-
-use wcf\util\StringUtil;
-
 use wcf\system\acl\ACLHandler;
-
+use wcf\system\event\EventHandler;
 use wcf\system\menu\page\PageMenu;
 use wcf\system\WCF;
-use wcf\system\event\EventHandler;
+use wcf\util\StringUtil;
 
 /**
  * Shows the sudoku page.
@@ -20,7 +15,7 @@ use wcf\system\event\EventHandler;
  * @author	Oliver Kliebisch
  * @copyright	2012 Oliver Kliebisch
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	de.packageforge.wcf.sudoko
+ * @package	de.packageforge.wcf.sudoku
  * @subpackage	page
  * @category	Community Framework
  */
