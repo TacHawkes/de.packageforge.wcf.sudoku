@@ -31,7 +31,7 @@
 {include file='header' sandbox=false sidebarOrientation='right'}
 
 <header class="wcf-container wcf-mainHeading">
-	<img src="{icon size='L'}sudoku1{/icon}" alt="" class="wcf-containerIcon" />
+	<img src="{icon size='L'}sudoku{/icon}" alt="" class="wcf-containerIcon" />
 	<hgroup class="wcf-containerContent">
 		<h1>Sudoku</h1>
 	</hgroup>
