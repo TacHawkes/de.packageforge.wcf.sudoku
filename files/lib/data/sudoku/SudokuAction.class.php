@@ -8,7 +8,7 @@ use wcf\data\AbstractDatabaseObjectAction;
  * @author	Oliver Kliebisch
  * @copyright	2012 Oliver Kliebisch
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	de.packageforge.wcf.sudoku
+ * @package	com.woltlab.wcf
  * @subpackage	data.sudoku
  * @category 	Community Framework
  */

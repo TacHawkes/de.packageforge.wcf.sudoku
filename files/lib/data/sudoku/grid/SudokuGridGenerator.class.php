@@ -8,13 +8,13 @@ use wcf\system\SingletonFactory;
 use wcf\util\MathUtil;
 
 /**
- * Generates sudoku grids. The math and thoughts behind this algorith are inspired
+ * Generates sudoku grids. The math and thoughts behind this algorithm are inspired
  * by: http://zhangroup.aporc.org/images/files/Paper_3485.pdf
  *
  * @author	Oliver Kliebisch
  * @copyright	2012 Oliver Kliebisch
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	de.packageforge.wcf.sudoku
+ * @package	com.woltlab.wcf
  * @subpackage	data.sudoku.grid
  * @category 	Community Framework
  */
@@ -44,7 +44,7 @@ class SudokuGridGenerator extends SingletonFactory {
 	 *
 	 * @param 	integer 	$difficulty
 	 */
-	public function generateSudokuGrid($difficulty = self::DIFFICULTY_EVIL) {
+	public function generateSudokuGrid($difficulty = self::DIFFICULTY_MEDIUM) {
 		$grid = null;
 
 		// generate terminal pattern
@@ -56,7 +56,7 @@ class SudokuGridGenerator extends SingletonFactory {
 		while ($grid === null);
 
 		// set up restrictions and iterator according to difficulty
-		$propapagator = null;
+		$iterator = null;
 		$remainingCellRestriction = 0;
 		$lowerRowColumnRestriction = 0;
 		switch ($difficulty) {

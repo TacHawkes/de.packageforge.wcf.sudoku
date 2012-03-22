@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="de.packageforge.wcf.sudoku" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
+	<packageinformation>
+		<packagename>Sudoku Game</packagename>
+		<packagedescription>The popular logic game "Sudoku".</packagedescription>
+		<packagedescription language="de">Das beliebte Logikspiel "Sudoku".</packagedescription>		
+		<isunique>1</isunique>
+		<version>1.0.0 Alpha 1</version>
+		<date>2012-03-22</date>
+	</packageinformation>
+
+	<authorinformation>
+		<author>Oliver Kliebisch</author>
+		<authorurl>http://www.packageforge.de</authorurl>
+	</authorinformation>
+
+	<instructions type="install">
+		<instruction type="files">files.tar</instruction>		
+		<instruction type="template">template.tar</instruction>		
+		<instruction type="sql">install.sql</instruction>		
+	</instructions>
+</package>

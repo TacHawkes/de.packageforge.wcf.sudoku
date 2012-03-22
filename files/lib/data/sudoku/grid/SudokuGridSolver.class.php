@@ -10,7 +10,7 @@ use wcf\system\SingletonFactory;
  * @author	Attractive Chaos, Oliver Kliebisch
  * @copyright	2011 Attractive Chaos, 2012 Oliver Kliebisch
  * @license	MIT License, GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	de.packageforge.wcf.sudoku
+ * @package	com.woltlab.wcf
  * @subpackage	data.sudoku.grid
  * @category 	Community Framework
  */
@@ -22,7 +22,7 @@ class SudokuGridSolver extends SingletonFactory {
 	 * @param SudokuGrid $grid
 	 */
 	public function solve(SudokuGrid $grid) {
-		// primitve datatypes are faster for solving
+		// primitive datatypes are faster for solving
 		$g = array();
 		for ($i = 0; $i < SudokuGrid::GRID_SIZE; $i++) {
 			for ($j = 0; $j < SudokuGrid::GRID_SIZE; $j++) {

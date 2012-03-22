@@ -7,7 +7,7 @@ namespace wcf\data\sudoku\grid;
  * @author	Oliver Kliebisch
  * @copyright	2012 Oliver Kliebisch
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	de.packageforge.wcf.sudoku
+ * @package	com.woltlab.wcf
  * @subpackage	data.sudoku.grid
  * @category 	Community Framework
  */
@@ -37,7 +37,7 @@ class SudokuGrid {
 	 */
 	protected function initGrid() {
 		if ($this->grid !== null && is_string($this->grid)) {
-			// unflatted data
+			// unflatten data
 			$t = $this->grid;
 			$this->grid = array();
 			for ($i = 0; $i < SudokuGrid::GRID_SIZE; $i++) {
