@@ -3,11 +3,48 @@
 <head>
 	<title>Sudoku page</title>
 	{include file='headInclude' sandbox=false}
+	<style type="text/css">
+		.sudokuTable {
+  			border-collapse: collapse;
+  			border: solid thick;
+  			width: auto !important;
+  			margin: 0 auto;
+  			font-size: 2em;
+  		}
+  		.sudokuTable colgroup, .sudokuTable tbody {
+  			border: solid medium;
+  		}
 
+  		.sudokuTable tr:nth-child(2n+1) td {
+			background-color: white;
+		}
+  		.sudokuTable td {
+  			border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0;
+  			border-right-color: black !important;
+  			background-color: white;
+  		}
+
+  		.wcf-sudokuGivenValue {
+  			background-color: darkGray !important;
+  			font-weight: bold;
+  		}
+
+  		.wcf-sudokuSelectedCell {
+			border-width: thick !important;
+			border-color: black !important;
+  		}
+
+  		.clear {
+  			width: 65px;
+  		}
+	</style>
+
+	<script type="text/javascript" src="{@$__wcf->getPath('wcf')}js/WCF.Sudoku.js"></script>
 	<script type="text/javascript">
 		//<![CDATA[
 		$(function() {
 			WCF.TabMenu.init();
+			new WCF.Sudoku.Table('#sudokuTable1');
 		});
 		//]]>
 	</script>
@@ -19,7 +56,13 @@
 <nav id="sidebarContent" class="wcf-sidebarContent">
 	<div>
 		<fieldset>
-			<legend>sort</legend>
+			<legend>Wie wird gespielt?</legend>
+
+			<p>Das Ziel des Spiels ist es das links stehende Tableau bestehend aus 9x9 Felder so mit Zahlen zu füllen, dass in jedem 3x3 Block, in jeder Zeile und in jeder Spalte die Zahlen von 1 bis 9 genau einmal vorkommen.</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>Tipps</legend>
 
 
 		</fieldset>
@@ -37,14 +80,14 @@
 	</hgroup>
 </header>
 
-<div class="wcf-tabMenuContainer">
+<div class="wcf-tabMenuContainer" data-active="game">
 	<nav class="wcf-tabMenu">
 		<ul>
-			<li><a href="#game" title="{lang}wcf.sudoku.game{/lang}">{lang}wcf.sudoku.game{/lang}</a></li>
+			<li><a href="#game" title="game">{lang}wcf.sudoku.game{/lang}</a></li>
 		</ul>
 	</nav>
 
-	<div id="game" class="wcf-border wcf-tabMenuContent" data-menu-item="game">
+	<div id="game" class="wcf-border wcf-tabMenuContent">
 		<hgroup class="wcf-subHeading">
 			<h1>{lang}wcf.sudoku.newGame{/lang}</h1>
 		</hgroup>
@@ -52,34 +95,18 @@
 			<li class="wcf-infoPackageApplication">
 				<fieldset>
 					<legend>Easy</legend>
-					<style scoped>
-  				table {
-  					border-collapse: collapse;
-  					border: solid thick;
-  					width: auto !important;
-  					margin: 0 auto;
-  					font-size: 2em;
-  				}
-  				colgroup, tbody {
-  					border: solid medium;
-  				}
-  				td {
-  					border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0;
-  					border-right-color: black !important;
-  				}
- 			</style>
- 			<table>
+ 			<table class="sudokuTable" id="sudokuTable1">
   				<colgroup><col><col><col></colgroup>
   				<colgroup><col><col><col></colgroup>
   				<colgroup><col><col><col></colgroup>
-  				{foreach from=$grid->getGridData() key=key item=row}
-  					{if $key % 3 == 0}<tbody>{/if}
+  				{foreach from=$grid->getGridData() key=rowNumber item=row}
+  					{if $rowNumber % 3 == 0}<tbody>{/if}
   					<tr>
-  					{foreach from=$row item=column}
-						<td{if $column->isGiven()} style="font-weight: bold;"{/if}> {if $column->getValue() > 0}{$column->getValue()}{/if} </td>
+  					{foreach from=$row key=columnNumber item=column}
+						<td id="sudokuCell-{@$rowNumber + 1}-{@$columnNumber + 1}"{if $column->isGiven()} class="wcf-sudokuGivenValue"{/if}> <span class="wcf-sudokuValue">{if $column->getValue() > 0}{$column->getValue()}{/if}</span> </td>
   					{/foreach}
   					</tr>
-  					{if ($key + 1) % 3 ==0}</tbody>{/if}
+  					{if ($rowNumber + 1) % 3 ==0}</tbody>{/if}
   				{/foreach}
  			</table>
 
@@ -97,6 +124,7 @@
  		<hgroup class="wcf-subHeading">
 			<h1>{lang}wcf.sudoku.savedGames{/lang}</h1>
 		</hgroup>
+
 	</div>
 </div>
 
