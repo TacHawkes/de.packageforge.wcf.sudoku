@@ -1,13 +1,13 @@
 /**** tables ****/
 DROP TABLE IF EXISTS wcf1_sudoku;
 CREATE TABLE wcf1_sudoku (
-  sudokuID int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  difficulty tinyint(1) NOT NULL DEFAULT '3',
-  time int(10) NOT NULL DEFAULT '0',
-  grid text,
-  timesPlayed int(10) NOT NULL DEFAULT '0',
-  lastPlayedTime int(10) NOT NULL DEFAULT '0',
-  timesSolved int(10) NOT NULL DEFAULT '10'  
+  	sudokuID int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  	difficulty tinyint(1) NOT NULL DEFAULT '3',
+  	time int(10) NOT NULL DEFAULT '0',
+  	grid text,
+  	timesPlayed int(10) NOT NULL DEFAULT '0',
+  	lastPlayedTime int(10) NOT NULL DEFAULT '0',
+  	timesSolved int(10) NOT NULL DEFAULT '10'  
 );
 
 DROP TABLE IF EXISTS wcf1_sudoku_to_user;

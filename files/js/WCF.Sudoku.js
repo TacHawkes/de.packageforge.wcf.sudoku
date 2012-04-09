@@ -3,6 +3,11 @@
  */
 WCF.Sudoku = {};
 
+/**
+ * Sudoku Table
+ * 
+ * DRAFT!
+ */
 WCF.Sudoku.Table = Class.extend({
 	/**
 	 * proxy object
@@ -76,6 +81,11 @@ WCF.Sudoku.Table = Class.extend({
 	}
 });
 
+/**
+ * Value Selector Overlay
+ * 
+ * DRAFT!
+ */
 WCF.Sudoku.ValueSelector = {
 		GRID_SIZE: 9,
 		
