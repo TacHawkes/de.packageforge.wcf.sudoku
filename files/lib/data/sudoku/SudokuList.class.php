@@ -16,5 +16,5 @@ class SudokuList extends DatabaseObjectList {
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$className
 	 */
-	public $className = 'wcf\data\spider\Sudoku';
+	public $className = 'wcf\data\sudoku\Sudoku';
 }

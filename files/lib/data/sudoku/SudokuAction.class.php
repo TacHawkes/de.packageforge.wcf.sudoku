@@ -16,5 +16,5 @@ class SudokuAction extends AbstractDatabaseObjectAction {
 	/**
 	 * @see wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\spider\SudokuEditor';
+	protected $className = 'wcf\data\sudoku\SudokuEditor';
 }

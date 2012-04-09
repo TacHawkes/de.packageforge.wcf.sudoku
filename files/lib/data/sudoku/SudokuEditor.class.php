@@ -16,5 +16,5 @@ class SudokuEditor extends DatabaseObjectEditor {
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'wcf\data\spider\Sudoku';
+	protected static $baseClass = 'wcf\data\sudoku\Sudoku';
 }
